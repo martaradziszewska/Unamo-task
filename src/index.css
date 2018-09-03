@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+
+body {
+	background-color: #f9fbf9;
+}
+
+.container {
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+.unamo-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	padding: 40px 0;
+}
+.header-link {
+	text-decoration: none;
+	color: #08ab6b;
+}
+
+.mainApp {
+	background-color: #fff;
+	border-radius: 3px;
+	box-shadow: 0px 1px 3px rgba(0,0,0,0.15);
+
+
+}
+
+.main-app-header div {
+  display: inline-block;
+  color: red;
+}
+
+.main-app-header p {
+  display: inline;
+  margin-left: 10px;
+
+}
+
+
+.add-user-btn {
+	width: 150px;
+	height: 40px;
+	border-radius: 3px;
+	background-color: #ffffff;
+	border: 1px solid #07ab6b;
+	color: #07ab6b;
+	font-weight: bold;
+	font-size: 14px;
+	cursor: pointer;
+  margin: 20px 30px;
+}
+
+.add-user-btn:hover {
+	background-color: #07ab6b;
+	color: white;
+}
+
+
+
+.add-user-btn span {
+	margin-left: 10px;
+}
+.fa-plus-circle {
+	transform: scale(1.5);
+}
+
+/* STYLES FOR USER FORM IN HEADER */
+
+.user-form {
+    margin: 20px 30px;
+}
+
+.user-form input {
+  width: 250px;
+  height: 40px;
+  border-radius: 3px;
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.05);
+  background-color: #ffffff;
+  border: 1px solid #cfd3d5;
+}
+
+.user-form input[type="submit"] {
+  width: 150px;
+  background-color: #07ab6b;
+  color: white;
+}
+
+
+
+
+	/* STYLES FOR USER TABLE */
+
+.users-table {
+  border-collapse:collapse;
+  width: 100%;
+}
+.users-header {
+    background-color: #e9ebef;
+}
+
+th {
+  text-align: left;
+  padding: 5px 30px;
+  font-size: 12px;
+}
+td {
+    padding: 20px 30px;
+    font-size: 14px;
+}
+
+.users-list > tr:nth-child(2n) {
+  background-color: #fbfbfb;
+}
+
+.remove-user-btn {
+    background: none;
+   border: none;
+   outline: none;
+   cursor: pointer;
+}
+
+.fa-times {
+  transform: scale(1.5);
+  color: #d1d6d7;
+
+}
