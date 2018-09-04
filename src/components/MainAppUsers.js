@@ -29,9 +29,8 @@ export default class MainAppUsers extends React.Component {
 
 
 
-
 	render() {
-console.log(this.state.users);
+		console.log(this.state.users);
 			let isListHasUsers = this.props.currentUsers.length > 0 ? true : false;
 		return(
 			<table className = "users-table">
@@ -54,7 +53,7 @@ console.log(this.state.users);
 									</tr>
 								)
 
-							}) : <tr><td>Add some users</td></tr>}
+							}) : <tr><td>Add some users!</td></tr>}
 
 
 				</tbody>

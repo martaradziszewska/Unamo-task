@@ -22,11 +22,8 @@ export default class AddButton extends React.Component {
 			<div>
 				<button className="add-user-btn" disabled={this.props.disabled} onClick={this.showForm}>
 					<i className="fa fa-plus-circle" aria-hidden="true"></i>
-					<span>Add a user</span>
+					<span>Add user</span>
 				</button>
-
-
-
 			</div>
 		)
 	}

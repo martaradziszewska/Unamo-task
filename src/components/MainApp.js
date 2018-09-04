@@ -8,6 +8,7 @@ export default class MainApp extends React.Component {
 		super(props);
 		this.state = {
 			currentUsers: [],
+			newUser: "",
 		}
 	}
 	componentDidMount () {
@@ -16,8 +17,8 @@ export default class MainApp extends React.Component {
 			.then(response => {
 				const users = response.data;
 				let tempUsers = this.state.currentUsers;
-				users.forEach(user => {
-					tempUsers = [...tempUsers, {id: user.id, name: user.name, email: user.email}]
+				users.forEach((user,index) => {
+					tempUsers = [...tempUsers, {id: index+1, name: user.name, email: user.email}]
 				})
 				this.setState({
 					currentUsers: tempUsers,
@@ -33,11 +34,27 @@ export default class MainApp extends React.Component {
 		})
 	}
 
+
+
+	updateCurrentUsers = (name, email) => {
+			let users = this.state.currentUsers;
+			let newId;
+			if(users.length !== 0) {
+					newId = users[users.length-1].id;
+			} else {
+				newId = users.length;
+			}
+			console.log(newId);
+			this.setState({
+				currentUsers: [...this.state.currentUsers, {id: newId + 1, name: name, email: email}],
+			})
+	}
+
 	render() {
 
 		return(
 			<div className="mainApp">
-				<MainAppHeader currentUsers = {this.state.currentUsers} />
+				<MainAppHeader currentUsers = {this.state.currentUsers} onUpdateCurrentUsers={this.updateCurrentUsers} />
 				<MainAppUsers currentUsers = {this.state.currentUsers} updateUsers={this.updateUsers} />
 			</div>
 		)
