@@ -6,7 +6,7 @@ export default class UsersRepeatMessaMessage extends React.Component {
     return(
       <div className = "limit-msg">
         <i className="fas fa-exclamation-circle"></i>
-      <p>This e-mail is already used.</p>
+      <p>This e-mail is already used. Try another one.</p>
       </div>
 
     )

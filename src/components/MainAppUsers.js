@@ -1,4 +1,6 @@
 import React from 'react';
+import HeaderSortEmail from '../components/HeaderSortEmail';
+import HeaderSortName from '../components/HeaderSortName';
 
 
 
@@ -7,6 +9,7 @@ export default class MainAppUsers extends React.Component {
 	super(props);
 	this.state = {
 			users: [],
+			direction: false,
 		}
 	}
 
@@ -28,6 +31,43 @@ export default class MainAppUsers extends React.Component {
 	}
 
 
+	sortAscending = key => {
+		this.setState({
+			users: this.state.users.reverse().sort((a,b) => {
+				a[key].toLowerCase();
+				b[key].toLowerCase();
+				if(a[key] < b[key]) return -1;
+				if(a[key] > b[key]) return 1;
+				return 0;
+			})
+		})
+	}
+
+	sortDescending = key => {
+		this.setState({
+			users: this.state.users.reverse().sort((a,b) => {
+				a[key].toLowerCase();
+				b[key].toLowerCase();
+				if(a[key] > b[key]) return -1;
+				if(a[key] < b[key]) return 1;
+				return 0;
+			})
+		})
+	}
+
+
+
+	sortBy = key => {
+		this.setState({
+			direction: !this.state.direction,
+		}, () => {
+			if(this.state.direction) return this.sortAscending(key);
+			if(!this.state.direction) return this.sortDescending(key);
+		})
+	}
+
+
+
 
 	render() {
 
@@ -36,9 +76,9 @@ export default class MainAppUsers extends React.Component {
 			<table className = "users-table">
 				<thead className = "users-header">
 					<tr>
-						<th>LP</th>
-						<th>USER</th>
-					<th colSpan = "2">EMAIL</th>
+					  <th>LP</th>
+					<HeaderSortName header = "USER" direction={this.state.direction} sortByName = {() => this.sortBy('name')}/>
+				<HeaderSortEmail header="EMAIL" direction={this.state.direction} sortByEmail = {() => this.sortBy('email')}/>
 					</tr>
 				</thead>
 				<tbody className = "users-list">
@@ -54,11 +94,7 @@ export default class MainAppUsers extends React.Component {
 								)
 
 							}) : <tr><td>Add some users!</td></tr>}
-
-
 				</tbody>
-
-
 			</table>
 		)
 	}
