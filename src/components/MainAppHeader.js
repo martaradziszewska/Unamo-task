@@ -33,6 +33,7 @@ export default class MainAppHeader extends React.Component {
 	}
 
 
+
 	render() {
 		let isLimit = this.props.currentUsers.length > 9 ? true : false;
 		return(

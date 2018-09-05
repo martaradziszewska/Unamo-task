@@ -44,7 +44,6 @@ export default class MainApp extends React.Component {
 			} else {
 				newId = users.length;
 			}
-			console.log(newId);
 			this.setState({
 				currentUsers: [...this.state.currentUsers, {id: newId + 1, name: name, email: email}],
 			})

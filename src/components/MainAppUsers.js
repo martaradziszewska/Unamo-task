@@ -30,7 +30,7 @@ export default class MainAppUsers extends React.Component {
 
 
 	render() {
-		console.log(this.state.users);
+
 			let isListHasUsers = this.props.currentUsers.length > 0 ? true : false;
 		return(
 			<table className = "users-table">
