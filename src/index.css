@@ -178,9 +178,12 @@ td {
 
 }
 
-.fa-sort-down, .fa-sort-up {
+.fa-sort-down {
   padding-left: 10px;
   transform: scale(1.5) translateY(-20%);
+}
 
-
+.fa-sort-up {
+    padding-left: 10px;
+    transform: scale(1.5) translateY(20%);
 }
