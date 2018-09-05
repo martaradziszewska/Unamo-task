@@ -91,6 +91,12 @@ body {
 }
 
 
+button:disabled {
+  color: grey;
+  border-color: grey;
+  pointer-events: none;
+}
+
 
 /* STYLES FOR USER FORM IN HEADER */
 
